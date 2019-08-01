@@ -8,13 +8,7 @@ pipeline {
                 }
             }
         }
-        stage('Build & Test') {
-            steps {
-                script {
-                    sh "mvn verify -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8089 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=8089" // Proxy tests through ZAP
-                }
-            }
-        }
+
     }
     post {
         always {
