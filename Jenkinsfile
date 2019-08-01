@@ -8,7 +8,12 @@ pipeline {
                 }
             }
         }
-
+        stage('attack')
+        {
+            steps{
+            runZapAttack(userId: 1, scanPolicyName:"")
+                }
+        }
     }
     post {
         always {
